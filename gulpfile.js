@@ -24,14 +24,12 @@ gulp.task('libs', function () {
 	.pipe(rename({ suffix: '.min' }))
 	.pipe(uglify())
 	.pipe(gulp.dest('js'))
-    //.pipe(jsFilter.restore())
-    // собраем css файлы, склеиваем и отправляем их под синтаксисом scss
     .pipe(cssFilter)
-    .pipe(concat('libs.css')) //можно было оставить расширение css, но я использую sass, поэтому мне так удобнее
+    .pipe(concat('libs.css'))
     .pipe(gulp.dest('css'))
 	.pipe(rename({ suffix: '.min' }))
 	.pipe(minifycss())
-	.pipe(gulp.dest('css')); //в моем случае фаил lib.scss отправляется в папку dev/sass/library/ ,где дальше конкатенируеся с библиотекой , но это другая история
+	.pipe(gulp.dest('css')); 
 });
  
 gulp.task('compass', function() {

@@ -1,0 +1,93 @@
+
+.owl-theme {
+	// Styling Next and Prev buttons
+	.owl-nav {
+		margin-top: 10px;
+		text-align: center;
+		-webkit-tap-highlight-color: transparent;
+		
+		[class*='owl-'] {
+		  position: absolute;
+      z-index: 2;
+      height: 100%;
+      width: 50px;
+      top: 0;
+      color: #fff;
+      font-size: 30px;
+			/*color: $nav-color;
+			font-size: $nav-font-size;
+			margin: $nav-margin;
+			padding: $nav-padding;
+			background: $nav-background;
+			display: inline-block;
+			cursor: pointer;
+			@include rounded($nav-rounded);
+
+			&:hover {
+				background: $nav-background-hover;
+				color:$nav-color-hover;
+				text-decoration: none;
+			}*/
+		}
+		.owl-prev {
+		  left: 0;
+		  &:after {
+          font-family: 'Glyphicons Halflings';
+          content: "\e079";
+          position: absolute;
+          top: 50%;
+          left: 10px;
+      }
+		}
+		.owl-next {
+      right: 0;
+      &:after {
+          font-family: 'Glyphicons Halflings';
+          content: "\e080";
+          position: absolute;
+          top: 50%;
+          right: 10px;
+      }
+    }
+		.disabled {
+			opacity: $nav-disabled-opacity;
+			cursor: default;
+		}
+	}
+
+	// Styling dots
+	.owl-nav.disabled + .owl-dots {
+		margin-top: 10px;
+	}
+	.owl-dots {
+	  position: absolute;
+	  width: 100%;
+	  bottom: 20px;
+		text-align: center;
+		-webkit-tap-highlight-color: transparent;
+		
+		.owl-dot {
+			display: inline-block;
+			zoom: 1;
+			*display: inline;
+
+			span {
+				width: $dot-width;
+				height: $dot-height;
+				margin: $dot-margin;
+				background: $dot-background;
+				display: block;
+				-webkit-backface-visibility: visible;
+				@include transition(opacity, 200ms, ease);
+				@include rounded($dot-rounded);
+			}
+
+			&.active,
+			&:hover {
+				span {
+					background: $dot-background-active;
+				}
+			}
+		}
+	}
+}
